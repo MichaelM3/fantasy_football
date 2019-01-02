@@ -1,0 +1,5 @@
+<h1>Teams You Own</h1>
+
+<% @user.leagues.each do |league| %>
+  <h2><%= link_to league.league_name, league_path(league) %></h2>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Welcome to Fantasy Football!</h1>
+<ul>
+  <% @leagues.each do |league| %>
+    <li><%= link_to league.league_name, league_path(league) %></li>
+  <% end %>
+</ul>
