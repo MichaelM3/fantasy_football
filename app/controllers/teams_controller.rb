@@ -12,7 +12,13 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.create(team_params)
-    redirect_to league_path(@team.league_id)
+    if @team.valid?
+      flash[:notice] = "You've created your team!"
+      redirect_to league_path(@team.league_id)
+    else
+      flash[:errors] = @team.errors.full_messages 
+      redirect_to new_team_to_league_path(@team.user_id)
+    end
   end
 
   private

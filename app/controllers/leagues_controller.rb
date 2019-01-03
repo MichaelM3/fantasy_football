@@ -6,6 +6,19 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
+  end
+
+  def new
+    @league = League.new
+  end
+
+  def create
+    @league = League.create(league_params)
+    redirect_to @league
+  end
+
+  def matchups
+    @league = League.find(params[:id])
     @matchup = @league.matchup
     @matchup.each do |matchup|
       if matchup[0].score > matchup[1].score
@@ -16,15 +29,6 @@ class LeaguesController < ApplicationController
         matchup[1].update(winner: true)
       end
     end
-  end
-
-  def new
-    @league = League.new
-  end
-
-  def create
-    @league = League.create(league_params)
-    redirect_to @league
   end
 
   private

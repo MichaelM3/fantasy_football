@@ -1,13 +1,8 @@
 <h1>Welcome to <%= @league.league_name %>!</h1>
 
-<h1>MATCHUP</h1>
-
-<% @matchup.each do |matchup| %>
-  <h2><%= link_to matchup[0].team.team_name, team_path(matchup[0].team.id) %> vs <%= link_to matchup[1].team.team_name, team_path(matchup[1].team.id) %></h2>
-  <h3><%= matchup[0].score %> - <%= matchup[1].score %></h3>
-  <% matchup.each do |team_game| %>
-    <% if team_game.winner == true %>
-      <h3><%= team_game.team.team_name %> is the winner!</h3><br>
-    <% end %>
-  <% end %>
+<h2>TEAMS</h2>
+<% @league.teams.each do |team| %>
+  <h3><%= link_to team.team_name, team_path(team) %></h3>
 <% end %>
+
+<h2><%= link_to "Click here to see matchups", matchups_path %></h2>

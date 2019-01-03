@@ -1,4 +1,4 @@
 <h1><%= @player.player_name %></h1>
 <h2>Position: <%= @player.position %></h2>
 <h2>Points: <%= @player.points %></h2>
-<h2>Team: <%= @player.team.team_name %></h2>
+<h2>Team: <%= link_to @player.team.team_name, @player.team %></h2>

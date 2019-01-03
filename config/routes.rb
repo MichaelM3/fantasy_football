@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   post 'teams', to: 'teams#create', as: 'create_team'
 
   resources :leagues, except: [:edit, :update, :destroy]
+  get 'leagues/:id/matchups', to: 'leagues#matchups', as: 'matchups'
 
   resources :users, except: [:index, :destroy]
-  
+
 end
