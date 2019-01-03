@@ -1,5 +1,13 @@
-<h1>Teams You Own</h1>
+<h1><%= @user.username %><h1>
 
-<% @user.leagues.each do |league| %>
-  <h2><%= link_to league.league_name, league_path(league) %></h2>
+<h2>Leagues</h2><br>
+
+<% if @user.leagues == [] %>
+    <h2>YOU BELONG TO NO LEAGUES!</h2>
+<% else %>
+  <% @user.leagues.uniq.each do |league| %>
+    <h2><%= link_to league.league_name, league_path(league) %></h2>
+  <% end %>
 <% end %>
+
+<h2><%= link_to "Click here to join another league!", new_team_to_league_path %></h2>

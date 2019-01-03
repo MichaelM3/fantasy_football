@@ -1,8 +1,9 @@
 class League < ApplicationRecord
-  has_many :user_leagues
-  has_many :users, through: :user_leagues
-  has_many :teams, through: :users
+  has_many :teams
+  has_many :users, through: :teams
   has_many :team_games
+
+  validates :count, numericality: { less_than_or_equal_to: 6,  only_integer: true }
 
   def matchup
     all_team_games = self.team_games
@@ -11,6 +12,11 @@ class League < ApplicationRecord
       break sliced if sliced.none? { |a| a.reduce(:==) }
     end
   end
+
+  def count
+    self.teams.length
+  end
+
 
   # def matchup
   #   all_team_games = self.team_games

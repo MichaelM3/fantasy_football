@@ -1,0 +1,11 @@
+<h1>Join a new league!</h1>
+
+<%= form_for @team, url: create_team_path do |f| %>
+  <%= f.label :team_name %>
+  <%= f.text_field :team_name %>
+  <%= f.collection_select :league_id, @leagues, :id, :league_name %>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <%= f.submit %>
+<% end %>
+
+<h2><%= link_to "Click here to go back", user_path(@user) %></h2>

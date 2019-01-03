@@ -3,6 +3,7 @@ class CreateTeams < ActiveRecord::Migration[5.2]
     create_table :teams do |t|
       t.string :team_name
       t.integer :user_id
+      t.integer :league_id
 
       t.timestamps
     end
