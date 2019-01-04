@@ -1,5 +1,10 @@
-<h1>NFL PLAYERS</H1>
-
-<% @players.each do |player| %>
-  <h3><%= link_to player.player_name, player_path(player) %> Position: <%= player.position %></h3>
-<% end %>
+<div id="matchup-bg">
+  <div id='league-index-container' class="ui raised very padded text container segment">
+    <h1 id='h1-color' align="center"class="ui header">NFL PLAYERS</h1>
+    <div id="matchup-teams">
+      <% @players.each do |player| %>
+        <h3 id='h3-color'><%= link_to player.player_name, player_path(player) %> Position: <%= player.position %></h3>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -23,9 +23,9 @@
   height: 60vh;
 }
 
-#title-color {
-  color: #1b1c1d;
-  text-shadow: 2px 2px #FF0000;
+#title-color-league {
+  text-shadow: 2px 2px 2px #337bff;
+  font-size: 3.5em;
 }
 
 #h1-color {
@@ -41,7 +41,7 @@
 }
 
 #matchup-teams {
-  height: 75vh;
+  height: auto;
 }
 
 #winner-bg {

@@ -1,7 +1,8 @@
-<h1><%= @user.username %><h1>
-
-<h2>Leagues</h2><br>
-
+<div id="user-bg">
+<div id='team-container' class="ui raised very padded text container segment">
+  <h1 id="title-color-league" align="center"class="ui header">User <%= @user.username %></h1>
+  <div id="league-teams">
+    <h1 id="h1-color">Leagues</h1><br>
 <% if @user.leagues == [] %>
     <h2>YOU BELONG TO NO LEAGUES!</h2>
 <% else %>
@@ -9,5 +10,6 @@
     <h2><%= link_to league.league_name, league_path(league) %></h2>
   <% end %>
 <% end %>
-
-<h2><%= link_to "Click here to join another league!", new_team_to_league_path %></h2>
+<h2 align="right"><%= link_to "Click here to join another league!", new_team_to_league_path %></h2>
+</div>
+</div>

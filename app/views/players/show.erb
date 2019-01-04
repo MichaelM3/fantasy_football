@@ -1,3 +1,9 @@
-<h1><%= @player.player_name %></h1>
-<h2>Position: <%= @player.position %></h2>
-<h2>Points: <%= @player.points %></h2>
+<div id="user-bg">
+  <div id='team-container' class="ui raised very padded text container segment">
+    <h1 id="title-color-league"align="center"><%= @player.player_name %></h1>
+    <div id="league-teams">
+      <h2 id="h1-color">Position: <%= @player.position %></h2>
+      <h2 id="h1-color">Points: <%= @player.points %></h2>
+    </div>
+  </div>
+</div>
