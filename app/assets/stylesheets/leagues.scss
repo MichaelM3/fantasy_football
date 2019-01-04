@@ -7,7 +7,7 @@
 }
 
 #league-index-container {
-  background-color: #ffffff91;
+  background-color: #2d3033cf;
 }
 
 #league-index-bg {
@@ -17,4 +17,41 @@
   background-repeat: no-repeat;
   height: 96.5vh;
   overflow-x: scroll;
+}
+
+#league-index-bg {
+  background-image: url("https://cdn.vox-cdn.com/thumbor/6nxSsFHsTVZ6s5pSRlDqIygEZbA=/0x0:3000x2000/1200x800/filters:focal(1428x345:1908x825)/cdn.vox-cdn.com/uploads/chorus_image/image/59791247/898097376.jpg.0.jpg");
+  // background-position: center;
+  background-size:100%;
+  background-repeat: no-repeat;
+  height: 96.5vh;
+  overflow-x: scroll;
+}
+
+#league-teams {
+  height: 60vh;
+}
+
+#h1-color {
+  color: #ffffff;
+}
+
+#matchup-bg {
+  background-image: url("https://usatftw.files.wordpress.com/2015/12/usp-nfl_-green-bay-packers-at-detroit-lions_001.jpg?w=1000&h=600&crop=1");
+  background-size:100%;
+  background-repeat: no-repeat;
+  height: 96.5vh;
+  overflow-x: scroll;
+}
+
+#matchup-teams {
+  height: 72vh;
+}
+
+#winner-bg {
+  background-color: #ff0000bd;
+}
+
+#h3-color {
+  color: #ffffff;
 }

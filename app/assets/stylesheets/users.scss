@@ -1,3 +1,15 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new-user-container {
+  background-color: #ffffffe8;
+}
+
+#new-user-bg {
+  background-image: url("https://www.reviewjournal.com/wp-content/uploads/2018/10/11320776_web1_AP18301797876698.jpg");
+  background-size:100%;
+  background-repeat: no-repeat;
+  height: 96.5vh;
+  overflow-x: scroll;
+}

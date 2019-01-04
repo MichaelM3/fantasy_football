@@ -1,8 +1,15 @@
-<h1>Welcome to <%= @league.league_name %>!</h1>
-
-<h2>TEAMS</h2>
-<% @league.teams.each do |team| %>
-  <h3><%= link_to team.team_name, team_path(team) %></h3>
-<% end %>
-
-<h2><%= link_to "Click here to see matchups", matchups_path %></h2>
+<!DOCTYPE html>
+<html>
+  <div id="new-user-bg">
+    <div id='new-user-container' class="ui raised very padded text container segment">
+      <h1 align="center"class="ui header">Welcome to <%= @league.league_name %></h1>
+      <div id="league-teams">
+        <% @league.teams.each do |team| %>
+          <h2><%= link_to team.team_name, team_path(team) %></h2>
+        <% end %>
+      </div>
+      <button class="massive ui button">
+        <%= link_to "GENERATE AWESOMNESS", matchups_path %>
+      </button>
+  </div>
+</html>

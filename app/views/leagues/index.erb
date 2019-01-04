@@ -2,21 +2,21 @@
 <html>
   <div id="league-index-bg">
     <div id='league-index-container' class="ui raised very padded text container segment">
-      <h1 align="center"class="ui header">Welcome to Football Kings</h1>
+      <h1 id='h1-color' align="center"class="ui header">Welcome to Football Kings</h1>
       <div id="football-kings-leagues">
         <% counter = 0 %>
         <% @leagues.each do |league| %>
           <% counter += 1 %>
-          <h3><%= "#{counter}." %> <%= link_to league.league_name, league_path(league) %> <%= league.available_spots %></h3>
+          <h3 id='h1-color'><%= "#{counter}." %> <%= link_to league.league_name, league_path(league) %> <%= league.available_spots %></h3>
         <% end %>
       </div>
     </div>
 
     <div id='league-index-container' class="ui raised very padded text container segment">
-      <h2 class="ui header">Top Ranking Players</h2>
+      <h2 id='h1-color' class="ui header">Top Ranking Players</h2>
       <% @players.each do |player| %>
         <% if player.points >= 27 %>
-          <h3><%= link_to player.player_name, player_path(player) %> <%= player.points %> points</h3>
+          <h3 id='h1-color'><%= link_to player.player_name, player_path(player) %> <%= player.points %> points</h3>
         <% end %>
       <% end %>
     </div>

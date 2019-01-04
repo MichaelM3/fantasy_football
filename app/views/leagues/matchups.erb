@@ -1,13 +1,16 @@
-<h1>Welcome to <%= @league.league_name %>!</h1>
-
-<h1>MATCHUP</h1>
-
-<% @matchup.each do |matchup| %>
-  <h2><%= link_to matchup[0].team.team_name, team_path(matchup[0].team.id) %> vs <%= link_to matchup[1].team.team_name, team_path(matchup[1].team.id) %></h2>
-  <h3><%= matchup[0].score %> - <%= matchup[1].score %></h3>
-  <% matchup.each do |team_game| %>
-    <% if team_game.winner == true %>
-      <h3><%= team_game.team.team_name %> is the winner!</h3><br>
-    <% end %>
-  <% end %>
-<% end %>
+<div id="matchup-bg">
+  <div id='league-index-container' class="ui raised very padded text container segment">
+    <h1 id='h1-color' align="center"class="ui header">MATCHUP OF THE <%= @league.league_name %>!</h1>
+    <div id="matchup-teams">
+      <% @matchup.each do |matchup| %>
+        <h2 id='h1-color'><%= link_to matchup[0].team.team_name, team_path(matchup[0].team.id) %> vs <%= link_to matchup[1].team.team_name, team_path(matchup[1].team.id) %></h2>
+        <h3 id='h3-color'><%= matchup[0].score %> - <%= matchup[1].score %></h3>
+        <% matchup.each do |team_game| %>
+          <% if team_game.winner == true %>
+            <h3 id='winner-bg'><%= team_game.team.team_name %> is the winner!</h3><br>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

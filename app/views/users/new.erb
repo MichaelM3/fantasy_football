@@ -1,18 +1,25 @@
-<%= form_for @user, class: "ui fluid form" do |f| %>
-  <div class="ui divider"></div>
-  <div class="inline field">
-    <h3><%= f.label :username %></h3>
-    <%= f.text_field :username %>
-  </div>
-  <button class="ui primary button">
-    Create User
-  </button>
-<% end %>
-
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <div class="ui left pointing red basic label">
-      <%= error %>
+<!DOCTYPE html>
+<html>
+  <div id="new-user-bg">
+    <div id='new-user-container' class="ui raised very padded text container segment">
+      <h1 align="center"class="ui header">Create a username!</h1>
+      <%= form_for @user, class: "ui fluid form" do |f| %>
+        <div class="ui divider"></div>
+        <div class="inline field">
+          <h3><%= f.label :username %></h3>
+          <%= f.text_field :username %>
+        </div>
+        <button class="ui primary button">
+          Create User
+        </button>
+      <% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <div class="ui left pointing red basic label">
+            <%= error %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-  <% end %>
-<% end %>
+  </div>
+</html>
