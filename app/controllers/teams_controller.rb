@@ -21,6 +21,24 @@ class TeamsController < ApplicationController
     end
   end
 
+  def destroy_all_players
+    @team = Team.find(params[:id])
+    @dest_players = @team.players.destroy_all
+    redirect_to @team
+  end
+
+  def create_rand_players
+    @team = Team.find(params[:id])
+    if @team.players.count == 10
+      redirect_to team_path(@team)
+    else
+      @rand_players = 10.times {
+        Player.create(player_name: Faker::Football.player, points: rand(5..30), position: %w{QB RB WR}.sample, team_id: @team.id)
+      }
+      redirect_to @team
+    end
+  end
+
   private
 
   def team_params

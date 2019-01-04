@@ -1,9 +1,15 @@
-<h1>Team: <%= @team.team_name %></h1>
-
-<ul>
-  <% @team.players.each do |player| %>
-    <h3><%= link_to player.player_name, player_path(player) %> Position: <%= player.position %>, Points: <%= player.points %></h3>
-  <% end %>
-</ul>
-
-<h3><%= link_to @team.league.league_name, league_path(@team.league) %>
+  <div id="team-bg">
+    <div id='team-container' class="ui raised very padded text container segment">
+      <h1 id=title-color align="center"class="ui header">Team: <%= @team.team_name %></h1>
+      <h2 id=title-color align="right">League <%= link_to @team.league.league_name, league_path(@team.league) %><h2>
+      <div id="league-teams">
+        <% @team.players.each do |player| %>
+          <h3 id=h1-color><%= link_to player.player_name, player_path(player) %> Position: <%= player.position %>, Points: <%= player.points %></h3>
+        <% end %>
+        <div id="bot-buttons"class="ui buttons">
+          <%= link_to "Clear Team", destroy_all_players_path(@team), class: "ui button" %>
+          <div class="or"></div>
+          <%= link_to "Random Team", create_rand_players_path(@team), class: "ui positive button" %>
+        </div>
+      </div>
+    </div>

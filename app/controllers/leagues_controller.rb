@@ -1,8 +1,12 @@
 class LeaguesController < ApplicationController
 
   def index
-    @leagues = League.all
     @players = Player.all
+    if League.where('league_name LIKE ?', "%#{params[:search]}%").length > 0
+      @leagues = League.where('league_name LIKE ?', "%#{params[:search]}%")
+    else
+      @leagues = League.all
+    end
   end
 
   def show
@@ -15,7 +19,13 @@ class LeaguesController < ApplicationController
 
   def create
     @league = League.create(league_params)
-    redirect_to @league
+    if @league.valid?
+      flash[:notice] = "You've created your league!"
+      redirect_to @league
+    else
+      flash[:errors] = @league.errors.full_messages
+      redirect_to new_league_path
+    end
   end
 
   def matchups

@@ -11,5 +11,26 @@
   background-size:100%;
   background-repeat: no-repeat;
   height: 96.5vh;
-  overflow-x: scroll;
+  overflow-x: auto;
+}
+
+#team-bg {
+  background-image: url("https://cdn.vox-cdn.com/thumbor/0bFqXXRhJkPXZJP9exxPwAkJR9c=/0x0:4838x3225/1200x800/filters:focal(2030x1371:2804x2145)/cdn.vox-cdn.com/uploads/chorus_image/image/51851229/621517582.0.jpeg");
+  background-size:100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow-x: auto;
+}
+
+#team-container {
+  height: 105vh;
+  background-color: #2d3033eb;
+}
+
+#title-color {
+  color: #db2828
+}
+
+#bot-buttons {
+  width: 600px;
 }

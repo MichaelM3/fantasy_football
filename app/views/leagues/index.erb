@@ -2,7 +2,13 @@
 <html>
   <div id="league-index-bg">
     <div id='league-index-container' class="ui raised very padded text container segment">
-      <h1 id='h1-color' align="center"class="ui header">Welcome to Football Kings</h1>
+      <h1 id='title-color' align="center"class="ui header">Welcome to Football Kings</h1>
+        <div align="center"><%= form_tag leagues_path, method: :get, class: "ui fluid category search", class: "ui icon input" do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search leagues..." %>
+            <i class="search icon"></i>
+            <div class="results"></div>
+          <% end %>
+        </div>
       <div id="football-kings-leagues">
         <% counter = 0 %>
         <% @leagues.each do |league| %>

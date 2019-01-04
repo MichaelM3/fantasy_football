@@ -3,6 +3,9 @@ class League < ApplicationRecord
   has_many :users, through: :teams
   has_many :team_games
 
+  validates :league_name, presence: true
+  validates :league_name, uniqueness: true
+
   def matchup
     all_team_games = self.team_games
     loop do
