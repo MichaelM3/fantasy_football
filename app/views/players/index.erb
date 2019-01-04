@@ -1,0 +1,5 @@
+<h1>NFL PLAYERS</H1>
+
+<% @players.each do |player| %>
+  <h3><%= link_to player.player_name, player_path(player) %> Position: <%= player.position %></h3>
+<% end %>

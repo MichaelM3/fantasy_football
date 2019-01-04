@@ -4,11 +4,8 @@ class TeamGame < ApplicationRecord
 
   def self.total_team_points
     TeamGame.all.map do |team_game|
-      array = []
-      team_game.team.players.map do |player|
-        array << player.points
-      end
-      team_game.update(score: array.inject(0){|sum, x| sum + x})
+      final_score = team_game.team.players.inject(0){|sum, player| sum + player.points}
+      team_game.update(score: final_score)
     end
   end
 

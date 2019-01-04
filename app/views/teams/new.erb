@@ -1,17 +1,24 @@
 <h1>Join a new league!</h1>
 
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <%= error %>
-  <% end %>
+<%= form_for @team, url: create_team_path, class: "ui fluid form" do |f| %>
+  <div class="ui divider"></div>
+  <div class="inline field">
+    <h3><%= f.label :team_name %></h3>
+    <%= f.text_field :team_name %>
+    <%= f.collection_select :league_id, @leagues, :id, :league_name %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
+  </div>
+  <button class="ui primary button">
+    Create League
+  </button>
 <% end %>
 
-<%= form_for @team, url: create_team_path, class: "ui form" do |f| %>
-  <%= f.label :team_name %>
-  <%= f.text_field :team_name %>
-  <%= f.collection_select :league_id, @leagues, :id, :league_name %>
-  <%= f.hidden_field :user_id, :value => @user.id %>
-  <%= f.submit %>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <div class="ui left pointing red basic label">
+      <%= error %>
+    </div>
+  <% end %>
 <% end %>
 
 <h2><%= link_to "Click here to go back", user_path(@user) %></h2>

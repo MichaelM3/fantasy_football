@@ -1,6 +1,18 @@
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.submit %>
+<%= form_for @user, class: "ui fluid form" do |f| %>
+  <div class="ui divider"></div>
+  <div class="inline field">
+    <h3><%= f.label :username %></h3>
+    <%= f.text_field :username %>
+  </div>
+  <button class="ui primary button">
+    Create User
+  </button>
+<% end %>
 
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <div class="ui left pointing red basic label">
+      <%= error %>
+    </div>
+  <% end %>
 <% end %>
